@@ -10,6 +10,6 @@ namespace SacramentPlanner.Models
         public int SpeakerId { get; set; }
         public int MeetingId { get; set; }
         public String SpeakerName { get; set; }
-        public String SpeakerName { get; set; }
+        public String Topic { get; set; }
     }
 }
