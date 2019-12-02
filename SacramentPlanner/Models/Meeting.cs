@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace SacramentPlanner.Models
 {
@@ -12,17 +13,19 @@ namespace SacramentPlanner.Models
         public Speaker Speaker { get; set; }
         public Bishopric Presiding { get; set; }
 
-        public string OpeningHymn { get; set; }
+        [Display(Name = "Opening Hymn")]
+        public Hymn OpeningHymn { get; set; }
 
-        public string SacramentHymn { get; set; }
+        [Display(Name = "Sacrament Hymn")]
+        public Hymn SacramentHymn { get; set; }
 
-        public string ClosingHymn { get; set; }
+        [Display(Name = "Closing Hymn")]
+        public Hymn ClosingHymn { get; set; }
 
+        [Display(Name = "Opening Prayer")]
         public string OpeningPrayer { get; set; }
 
+        [Display(Name = "Closing Prayer")]
         public string ClosingPrayer { get; set; }
-
-
-
     }
 }
