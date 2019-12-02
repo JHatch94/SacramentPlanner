@@ -12,11 +12,11 @@ namespace SacramentPlanner.Models
         public Speaker Speaker { get; set; }
         public Bishopric Presiding { get; set; }
 
-        public string OpeningHymn { get; set; }
+        public Hymn OpeningHymn { get; set; }
 
-        public string SacramentHymn { get; set; }
+        public Hymn SacramentHymn { get; set; }
 
-        public string ClosingHymn { get; set; }
+        public Hymn ClosingHymn { get; set; }
 
         public string OpeningPrayer { get; set; }
 
