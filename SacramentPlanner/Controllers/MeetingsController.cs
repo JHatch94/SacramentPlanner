@@ -13,6 +13,12 @@ namespace SacramentPlanner.Controllers
     {
         private readonly SacramentPlannerContext _context;
 
+        [BindProperty]
+        public Speaker Speaker { get; set; }
+
+        [BindProperty]
+        public Meeting Meeting { get; set; }
+
         public MeetingsController(SacramentPlannerContext context)
         {
             _context = context;
