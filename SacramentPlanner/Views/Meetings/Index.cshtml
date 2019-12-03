@@ -31,12 +31,6 @@
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.OpeningPrayer)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClosingPrayer)
-            </td>
-            <td>
                 <a asp-action="Edit" asp-route-id="@item.MeetingId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.MeetingId">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.MeetingId">Delete</a>
