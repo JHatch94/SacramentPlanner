@@ -25,10 +25,10 @@ namespace SacramentPlanner.Models
         [Display(Name = "Hymn #")]
         public int SacramentHymnNumber { get; set; }
 
-        [Display(Name = "Intermediate Hymn")]
+        [Display(Name = "Intermediate Hymn (Optional")]
         public string IntermediateHymn { get; set; }
 
-        [Display(Name = "Hymn #")]
+        [Display(Name = "Hymn # (Optional)")]
         public int IntermediateHymnNumber { get; set; }
 
         [Display(Name = "Closing Hymn")]
