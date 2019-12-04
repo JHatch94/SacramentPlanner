@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
+
 namespace SacramentPlanner.Models
 {
     public class Meeting
@@ -24,6 +25,9 @@ namespace SacramentPlanner.Models
 
         [Display(Name = "Hymn #")]
         public int SacramentHymnNumber { get; set; }
+
+        [Display(Name = "Speakers")]
+        public ICollection<Speaker> Speakers { get; set; }
 
         [Display(Name = "Intermediate Hymn (Optional")]
         public string IntermediateHymn { get; set; }
