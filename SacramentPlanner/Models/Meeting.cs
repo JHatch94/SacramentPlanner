@@ -11,7 +11,6 @@ namespace SacramentPlanner.Models
     {
         public int MeetingId { get; set; }
         public DateTime Date { get; set; }
-        public Speaker Speaker { get; set; }
         public string Presiding { get; set; }
 
         [Display(Name = "Opening Hymn")]
