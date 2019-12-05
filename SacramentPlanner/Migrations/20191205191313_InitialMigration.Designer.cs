@@ -10,8 +10,8 @@ using SacramentPlanner.Models;
 namespace SacramentPlanner.Migrations
 {
     [DbContext(typeof(SacramentPlannerContext))]
-    [Migration("20191203172823_Initial")]
-    partial class Initial
+    [Migration("20191205191313_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -87,17 +87,16 @@ namespace SacramentPlanner.Migrations
 
                     b.HasKey("SpeakerId");
 
-                    b.HasIndex("MeetingId")
-                        .IsUnique();
+                    b.HasIndex("MeetingId");
 
                     b.ToTable("Speaker");
                 });
 
             modelBuilder.Entity("SacramentPlanner.Models.Speaker", b =>
                 {
-                    b.HasOne("SacramentPlanner.Models.Meeting", null)
-                        .WithOne("Speaker")
-                        .HasForeignKey("SacramentPlanner.Models.Speaker", "MeetingId")
+                    b.HasOne("SacramentPlanner.Models.Meeting", "Meeting")
+                        .WithMany("Speakers")
+                        .HasForeignKey("MeetingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

@@ -4,12 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-
 namespace SacramentPlanner.Models
 {
     public class Meeting
     {
         public int MeetingId { get; set; }
+        [DataType(DataType.Date)]
         public DateTime Date { get; set; }
         public string Presiding { get; set; }
 
