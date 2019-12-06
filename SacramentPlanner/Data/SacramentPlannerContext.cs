@@ -13,6 +13,7 @@ namespace SacramentPlanner.Models
         {
         }
 
-        public DbSet<SacramentPlanner.Models.Meeting> Meeting { get; set; }
+        public DbSet<Meeting> Meeting { get; set; }
+        public DbSet<Speaker> Speaker { get; set; }
     }
 }

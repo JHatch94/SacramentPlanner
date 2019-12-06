@@ -85,7 +85,8 @@ namespace SacramentPlanner.Migrations
 
                     b.HasKey("SpeakerId");
 
-                    b.HasIndex("MeetingId");
+                    b.HasIndex("MeetingId")
+                        .IsUnique();
 
                     b.ToTable("Speaker");
                 });
@@ -93,8 +94,8 @@ namespace SacramentPlanner.Migrations
             modelBuilder.Entity("SacramentPlanner.Models.Speaker", b =>
                 {
                     b.HasOne("SacramentPlanner.Models.Meeting", "Meeting")
-                        .WithMany("Speakers")
-                        .HasForeignKey("MeetingId")
+                        .WithOne("Speaker")
+                        .HasForeignKey("SacramentPlanner.Models.Speaker", "MeetingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
