@@ -28,8 +28,11 @@ namespace SacramentPlanner.Models
         [Display(Name = "Hymn #")]
         public int SacramentHymnNumber { get; set; }
 
-        [Display(Name = "Speakers")]
-        public ICollection<Speaker> Speakers { get; set; }
+        [Display(Name = "Speaker Name")]
+        public Speaker Speaker { get; set; }
+
+        //[Display(Name = "Speakers")]
+        //public ICollection<Speaker> Speakers { get; set; }
 
         [Display(Name = "Intermediate Hymn (Optional")]
         public string IntermediateHymn { get; set; }
