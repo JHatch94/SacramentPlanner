@@ -19,6 +19,9 @@ namespace SacramentPlanner.Models
         [Display(Name = "Hymn #")]
         public int OpeningHymnNumber { get; set; }
 
+        [Display(Name = "Opening Prayer")]
+        public string OpeningPrayer { get; set; }
+
         [Display(Name = "Sacrament Hymn")]
         public string SacramentHymn { get; set; }
 
@@ -39,9 +42,6 @@ namespace SacramentPlanner.Models
 
         [Display(Name = "Hymn #")]
         public int ClosingHymnNumber { get; set; }
-
-        [Display(Name = "Opening Prayer")]
-        public string OpeningPrayer { get; set; }
 
         [Display(Name = "Closing Prayer")]
         public string ClosingPrayer { get; set; }
