@@ -52,15 +52,13 @@ namespace SacramentPlanner.Models
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MeetingId,Date,Presiding,OpeningHymn,OpeningHymnNumber," +
-            "                                           SacramentHymn,SacramentHymnNumber,IntermediateHymn,IntermediateHymnNumber," +
-            "                                           ClosingHymn,ClosingHymnNumber,OpeningPrayer,ClosingPrayer")] Meeting meeting)
+        public async Task<IActionResult> Create([Bind("MeetingId,Date,Speaker,Presiding,OpeningHymn,OpeningHymnNumber,SacramentHymn,SacramentHymnNumber,IntermediateHymn,IntermediateHymnNumber,ClosingHymn,ClosingHymnNumber,OpeningPrayer,ClosingPrayer")] Meeting meeting)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(meeting);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("../Views/Speakers/Index.cshtml");
+                return RedirectToAction(nameof(Index));
             }
             return View(meeting);
         }
@@ -86,7 +84,7 @@ namespace SacramentPlanner.Models
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MeetingId,Date,Presiding,OpeningHymn,OpeningHymnNumber,SacramentHymn,SacramentHymnNumber,IntermediateHymn,IntermediateHymnNumber,ClosingHymn,ClosingHymnNumber,OpeningPrayer,ClosingPrayer")] Meeting meeting)
+        public async Task<IActionResult> Edit(int id, [Bind("MeetingId,Date,Speaker,Presiding,OpeningHymn,OpeningHymnNumber,SacramentHymn,SacramentHymnNumber,IntermediateHymn,IntermediateHymnNumber,ClosingHymn,ClosingHymnNumber,OpeningPrayer,ClosingPrayer")] Meeting meeting)
         {
             if (id != meeting.MeetingId)
             {
