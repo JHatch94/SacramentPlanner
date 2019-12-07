@@ -34,7 +34,7 @@ namespace SacramentPlanner.Models
         //[Display(Name = "Speakers")]
         //public ICollection<Speaker> Speakers { get; set; }
 
-        [Display(Name = "Intermediate Hymn (Optional")]
+        [Display(Name = "Intermediate Hymn (Optional)")]
         public string IntermediateHymn { get; set; }
 
         [Display(Name = "Hymn # (Optional)")]
