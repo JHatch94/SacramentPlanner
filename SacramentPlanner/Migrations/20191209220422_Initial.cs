@@ -69,13 +69,13 @@ namespace SacramentPlanner.Migrations
                         column: x => x.MeetingId,
                         principalTable: "Meeting",
                         principalColumn: "MeetingId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_MeetingSpeaker_Speaker_SpeakerId",
                         column: x => x.SpeakerId,
                         principalTable: "Speaker",
                         principalColumn: "SpeakerId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateIndex(

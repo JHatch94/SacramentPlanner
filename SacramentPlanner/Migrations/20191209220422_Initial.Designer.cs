@@ -10,7 +10,7 @@ using SacramentPlanner.Models;
 namespace SacramentPlanner.Migrations
 {
     [DbContext(typeof(SacramentPlannerContext))]
-    [Migration("20191209213510_Initial")]
+    [Migration("20191209220422_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
