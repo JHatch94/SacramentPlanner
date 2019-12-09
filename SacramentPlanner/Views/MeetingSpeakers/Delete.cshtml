@@ -11,18 +11,93 @@
     <h4>MeetingSpeaker</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.meeting)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.meeting.Date)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.meeting.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.meeting.Presiding)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.meeting.Presiding)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.meeting.OpeningHymn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.meeting.OpeningHymn)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.meeting.OpeningPrayer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.meeting.OpeningPrayer)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.meeting.OpeningHymnNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.meeting.OpeningHymnNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.meeting.SacramentHymn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.meeting.SacramentHymn)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.meeting.SacramentHymnNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.meeting.SacramentHymnNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.speaker.SpeakerName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.speaker.SpeakerName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.speaker.Topic)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.speaker.Topic)
+        </dd>
+        @if (Model.meeting.IntermediateHymn != null || Model.meeting.IntermediateHymn == "")
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.meeting.IntermediateHymn)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.meeting.IntermediateHymn)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.meeting.IntermediateHymnNumber)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.meeting.IntermediateHymnNumber)
+            </dd>
+        }
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.meeting.ClosingHymn)
+        </dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.meeting.ClosingHymn)
-        </dd class>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.speaker)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.meeting.ClosingHymnNumber)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.speaker.SpeakerId)
-        </dd class>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.meeting.ClosingHymnNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.meeting.ClosingPrayer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.meeting.ClosingPrayer)
+        </dd>
     </dl>
     
     <form asp-action="Delete">
