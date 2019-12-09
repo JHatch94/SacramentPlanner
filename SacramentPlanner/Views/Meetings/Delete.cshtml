@@ -53,12 +53,21 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SacramentHymnNumber)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.IntermediateHymn)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.IntermediateHymn)
-        </dd>
+        @if (Model.IntermediateHymn != null || Model.IntermediateHymn == "")
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IntermediateHymn)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IntermediateHymn)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IntermediateHymnNumber)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IntermediateHymnNumber)
+            </dd>
+        }
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.IntermediateHymnNumber)
         </dt>
