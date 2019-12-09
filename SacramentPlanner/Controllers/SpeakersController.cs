@@ -46,7 +46,7 @@ namespace SacramentPlanner.Models
         // GET: Speakers/Create
         public IActionResult Create()
         {
-            ViewData["MeetingId"] = new SelectList(_context.Meeting, "MeetingId", "MeetingId");
+            ViewData["MeetingId"] = new SelectList(_context.Meeting, "MeetingId", "Date");
             return View();
         }
 
@@ -63,7 +63,7 @@ namespace SacramentPlanner.Models
                 await _context.SaveChangesAsync();
                 return Redirect("~/MeetingSpeakers");
             }
-            ViewData["MeetingId"] = new SelectList(_context.Meeting, "MeetingId", "MeetingId", speaker.MeetingId);
+            ViewData["MeetingId"] = new SelectList(_context.Meeting, "MeetingId", "Date", speaker.MeetingId);
             return View(speaker);
         }
 
@@ -80,7 +80,7 @@ namespace SacramentPlanner.Models
             {
                 return NotFound();
             }
-            ViewData["MeetingId"] = new SelectList(_context.Meeting, "MeetingId", "MeetingId", speaker.MeetingId);
+            ViewData["MeetingId"] = new SelectList(_context.Meeting, "MeetingId", "Date", speaker.MeetingId);
             return View(speaker);
         }
 
@@ -116,7 +116,7 @@ namespace SacramentPlanner.Models
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MeetingId"] = new SelectList(_context.Meeting, "MeetingId", "MeetingId", speaker.MeetingId);
+            ViewData["MeetingId"] = new SelectList(_context.Meeting, "MeetingId", "Date", speaker.MeetingId);
             return View(speaker);
         }
 

@@ -48,8 +48,8 @@ namespace SacramentPlanner.Controllers
         // GET: MeetingSpeakers/Create
         public IActionResult Create()
         {
-            ViewData["MeetingId"] = new SelectList(_context.Meeting, "MeetingId", "ClosingHymn");
-            ViewData["SpeakerId"] = new SelectList(_context.Speaker, "SpeakerId", "SpeakerId");
+            ViewData["MeetingId"] = new SelectList(_context.Meeting, "MeetingId", "Date");
+            ViewData["SpeakerId"] = new SelectList(_context.Speaker, "SpeakerId", "SpeakerName");
             return View();
         }
 
@@ -66,8 +66,8 @@ namespace SacramentPlanner.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MeetingId"] = new SelectList(_context.Meeting, "MeetingId", "ClosingHymn", meetingSpeaker.MeetingId);
-            ViewData["SpeakerId"] = new SelectList(_context.Speaker, "SpeakerId", "SpeakerId", meetingSpeaker.SpeakerId);
+            ViewData["MeetingId"] = new SelectList(_context.Meeting, "MeetingId", "Date", meetingSpeaker.MeetingId);
+            ViewData["SpeakerId"] = new SelectList(_context.Speaker, "SpeakerId", "SpeakerName", meetingSpeaker.SpeakerId);
             return View(meetingSpeaker);
         }
 
@@ -84,8 +84,8 @@ namespace SacramentPlanner.Controllers
             {
                 return NotFound();
             }
-            ViewData["MeetingId"] = new SelectList(_context.Meeting, "MeetingId", "ClosingHymn", meetingSpeaker.MeetingId);
-            ViewData["SpeakerId"] = new SelectList(_context.Speaker, "SpeakerId", "SpeakerId", meetingSpeaker.SpeakerId);
+            ViewData["MeetingId"] = new SelectList(_context.Meeting, "MeetingId", "Date", meetingSpeaker.MeetingId);
+            ViewData["SpeakerId"] = new SelectList(_context.Speaker, "SpeakerId", "SpeakerName", meetingSpeaker.SpeakerId);
             return View(meetingSpeaker);
         }
 
@@ -121,8 +121,8 @@ namespace SacramentPlanner.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MeetingId"] = new SelectList(_context.Meeting, "MeetingId", "ClosingHymn", meetingSpeaker.MeetingId);
-            ViewData["SpeakerId"] = new SelectList(_context.Speaker, "SpeakerId", "SpeakerId", meetingSpeaker.SpeakerId);
+            ViewData["MeetingId"] = new SelectList(_context.Meeting, "MeetingId", "Date", meetingSpeaker.MeetingId);
+            ViewData["SpeakerId"] = new SelectList(_context.Speaker, "SpeakerId", "SpeakerName", meetingSpeaker.SpeakerId);
             return View(meetingSpeaker);
         }
 
