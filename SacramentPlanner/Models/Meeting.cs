@@ -39,7 +39,6 @@ namespace SacramentPlanner.Models
         public int SacramentHymnNumber { get; set; }
 
         [Display(Name = "Speaker Name")]
-        [Required]
         public Speaker Speaker { get; set; }
 
         //[Display(Name = "Speakers")]
@@ -49,7 +48,7 @@ namespace SacramentPlanner.Models
         public string? IntermediateHymn { get; set; }
 
         [Display(Name = "Hymn # (Optional)")]
-        [Range(1, 341)]
+        [Range(0, 341)]
         public int? IntermediateHymnNumber { get; set; }
 
         [Display(Name = "Closing Hymn")]
