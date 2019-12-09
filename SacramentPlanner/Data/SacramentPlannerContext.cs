@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using SacramentPlanner.Models;
 
 namespace SacramentPlanner.Models
 {
@@ -15,5 +16,6 @@ namespace SacramentPlanner.Models
 
         public DbSet<Meeting> Meeting { get; set; }
         public DbSet<Speaker> Speaker { get; set; }
+        public DbSet<SacramentPlanner.Models.MeetingSpeaker> MeetingSpeaker { get; set; }
     }
 }
