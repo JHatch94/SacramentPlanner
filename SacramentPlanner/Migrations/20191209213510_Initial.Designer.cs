@@ -10,8 +10,8 @@ using SacramentPlanner.Models;
 namespace SacramentPlanner.Migrations
 {
     [DbContext(typeof(SacramentPlannerContext))]
-    [Migration("20191206213401_speakers")]
-    partial class speakers
+    [Migration("20191209213510_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,12 +29,14 @@ namespace SacramentPlanner.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ClosingHymn")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ClosingHymnNumber")
                         .HasColumnType("int");
 
                     b.Property<string>("ClosingPrayer")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Date")
@@ -43,22 +45,26 @@ namespace SacramentPlanner.Migrations
                     b.Property<string>("IntermediateHymn")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("IntermediateHymnNumber")
+                    b.Property<int?>("IntermediateHymnNumber")
                         .HasColumnType("int");
 
                     b.Property<string>("OpeningHymn")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("OpeningHymnNumber")
                         .HasColumnType("int");
 
                     b.Property<string>("OpeningPrayer")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Presiding")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SacramentHymn")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("SacramentHymnNumber")
@@ -67,6 +73,28 @@ namespace SacramentPlanner.Migrations
                     b.HasKey("MeetingId");
 
                     b.ToTable("Meeting");
+                });
+
+            modelBuilder.Entity("SacramentPlanner.Models.MeetingSpeaker", b =>
+                {
+                    b.Property<int>("MeetingSpeakerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("MeetingId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SpeakerId")
+                        .HasColumnType("int");
+
+                    b.HasKey("MeetingSpeakerId");
+
+                    b.HasIndex("MeetingId");
+
+                    b.HasIndex("SpeakerId");
+
+                    b.ToTable("MeetingSpeaker");
                 });
 
             modelBuilder.Entity("SacramentPlanner.Models.Speaker", b =>
@@ -91,6 +119,21 @@ namespace SacramentPlanner.Migrations
                         .IsUnique();
 
                     b.ToTable("Speaker");
+                });
+
+            modelBuilder.Entity("SacramentPlanner.Models.MeetingSpeaker", b =>
+                {
+                    b.HasOne("SacramentPlanner.Models.Meeting", "meeting")
+                        .WithMany()
+                        .HasForeignKey("MeetingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SacramentPlanner.Models.Speaker", "speaker")
+                        .WithMany()
+                        .HasForeignKey("SpeakerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("SacramentPlanner.Models.Speaker", b =>
