@@ -3,14 +3,26 @@
 }
 
 
-    
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">Welcome to the Sacrament Meeting Planner</h1>
+    <div id="main-banner">
+        <h1 class="display-4">Welcome to the Sacrament Meeting Planner</h1>
+    </div>
+    <div id="index-content">
+        <h2>Here's how to get started</h2>
+        <div id="create">
+            <h3>To create</h3>
             <ol id="steps-links">
-                <li><a href="#">Create Meeting Details</a></li>
-                <li><a href="#">Create Speakers Details</a></li>
-                <li><a href="#">Link the Meeting and the Speaker</a></li>
+                <li><a asp-area="" asp-controller="Meetings" asp-action="Index">Create Meeting Details <strong>first</strong></a></li>
+                <li><a asp-area="" asp-controller="Speakers" asp-action="Create">Create Speakers Details <strong>second</strong></a></li>
+                <li><a asp-area="" asp-controller="MeetingSpeakers" asp-action="Create">Link the Meeting and the Speaker <strong>last</strong></a></li>
             </ol>
         </div>
+        <div class="Delete">
+            <h3>To Delete</h3>
+            <ol id="steps-links">
+                <li><a asp-area="" asp-controller="MeetingSpeakers" asp-action="Index">Delete the link between Meeting and Speaker <strong>first</strong></a></li>
+                <li><a asp-area="" asp-controller="Speakers" asp-action="Index">Delete the Speaker <strong>second</strong></a></li>
+                <li><a asp-area="" asp-controller="Meetings" asp-action="Index">Delete the Meeting Details <strong>last</strong></a></li>
+            </ol>
+        </div>
+        
     </div>

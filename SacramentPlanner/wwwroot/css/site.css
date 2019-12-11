@@ -103,22 +103,54 @@ nav a:active {
     opacity: 0.7;
 }
 
-.jumbotron {
-    color: white;
-    background-image: url("https://i.guim.co.uk/img/media/f15d5147e2044fbce27fad5be7ba6ae197df6580/0_369_5541_3325/master/5541.jpg?width=1920&quality=85&auto=format&fit=max&s=fd33402125a4a4b0c47b05ac370f68cd");
+#main-banner {
+    margin: 0 auto;
+    height: 250px;
+    background-image: url("../Content/Assets/DraperTempleBanner.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
+    color: white;
 }
 
-
-
-.container h1, .container p {
-    text-shadow: 2px 2px 5px #000000;
-}
+    #main-banner h1 {
+        padding-top: 55px;
+        padding-left: 20px;
+        width: 60%;
+        text-shadow: 2px 2px 5px #000000;
+    }
 
 
 #steps-links li a {
-    color: white;
+    color: black;
+}
+
+
+#index-content {
+    margin-top: 5%;
+    text-align: center;
+}
+
+    #index-content h2 {
+        margin-bottom: 5%;
+        font-weight: bolder;
+    }
+
+    #index-content h3 {
+        font-weight: bolder;
+    }
+
+
+    #index-content ol li {
+        list-style-type: none;
+    }
+
+#create {
+    float: left;
+    width: 50%;
+}
+
+#delete {
+    float: right;
+    width: 50%;
 }
