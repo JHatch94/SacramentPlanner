@@ -21,7 +21,7 @@ namespace SacramentPlanner.Models
         [Required]
         public string OpeningHymn { get; set; }
 
-        [Display(Name = "Hymn #")]
+        [Display(Name = "Opening Hymn #")]
         [Required]
         public int OpeningHymnNumber { get; set; }
 
@@ -33,7 +33,7 @@ namespace SacramentPlanner.Models
         [Required]
         public string SacramentHymn { get; set; }
 
-        [Display(Name = "Hymn #")]
+        [Display(Name = "Sacrament Hymn #")]
         [Required]
         [Range(1, 341)]
         public int SacramentHymnNumber { get; set; }
@@ -47,7 +47,7 @@ namespace SacramentPlanner.Models
         [Display(Name = "Intermediate Hymn (Optional)")]
         public string? IntermediateHymn { get; set; }
 
-        [Display(Name = "Hymn # (Optional)")]
+        [Display(Name = "Intermediate Hymn # (Optional)")]
         [Range(0, 341)]
         public int? IntermediateHymnNumber { get; set; }
 
@@ -55,7 +55,7 @@ namespace SacramentPlanner.Models
         [Required]
         public string ClosingHymn { get; set; }
 
-        [Display(Name = "Hymn #")]
+        [Display(Name = "Closing Hymn #")]
         [Required]
         [Range(1, 341)]
         public int ClosingHymnNumber { get; set; }
