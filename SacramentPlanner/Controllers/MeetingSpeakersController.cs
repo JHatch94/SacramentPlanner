@@ -12,7 +12,7 @@ namespace SacramentPlanner.Controllers
     public class MeetingSpeakersController : Controller
     {
         private readonly SacramentPlannerContext _context;
-
+    
         public MeetingSpeakersController(SacramentPlannerContext context)
         {
             _context = context;
