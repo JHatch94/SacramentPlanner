@@ -64,7 +64,6 @@ body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
     font-family: 'Oswald', sans-serif;
-    background-color: pink;
 }
 .footer {
   position: absolute;
@@ -73,3 +72,51 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+
+/*Custom CSS*/
+nav ul li a {
+    font-size: 1.2em;
+}
+
+nav a {
+    font-size: 1.2em;
+}
+
+body {
+    font-size: 1.2em;
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+}
+nav ul li a:hover {
+    background-color: #add8e6;
+    color: white !important;
+    transition: all 1s;
+}
+
+nav a:active {
+    opacity: 0.7;
+}
+
+.jumbotron {
+    color: white;
+    background-image: url("https://i.guim.co.uk/img/media/f15d5147e2044fbce27fad5be7ba6ae197df6580/0_369_5541_3325/master/5541.jpg?width=1920&quality=85&auto=format&fit=max&s=fd33402125a4a4b0c47b05ac370f68cd");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+
+
+.container h1, .container p {
+    text-shadow: 2px 2px 5px #000000;
+}
+
+
+#steps-links li a{
+    color: white;
+}
+
