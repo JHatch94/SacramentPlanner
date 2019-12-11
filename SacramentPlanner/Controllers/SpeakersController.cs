@@ -61,7 +61,7 @@ namespace SacramentPlanner.Models
             {
                 _context.Add(speaker);
                 await _context.SaveChangesAsync();
-                return Redirect("~/MeetingSpeakers");
+                return Redirect("~/MeetingSpeakers/Create");
             }
             ViewData["MeetingId"] = new SelectList(_context.Meeting, "MeetingId", "Date", speaker.MeetingId);
             return View(speaker);

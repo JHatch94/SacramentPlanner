@@ -58,7 +58,7 @@ namespace SacramentPlanner.Models
             {
                 _context.Add(meeting);
                 await _context.SaveChangesAsync();
-                return Redirect("~/Speakers");
+                return Redirect("~/Speakers/Create");
             }
             return View(meeting);
         }
