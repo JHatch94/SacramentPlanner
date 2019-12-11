@@ -53,7 +53,7 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SacramentHymnNumber)
         </dd>
-        @if (Model.IntermediateHymn != null || Model.IntermediateHymn == "")
+        @if (Model.IntermediateHymn != null && Model.IntermediateHymn != "")
         {
             <dt class="col-sm-2">
                 @Html.DisplayNameFor(model => model.IntermediateHymn)

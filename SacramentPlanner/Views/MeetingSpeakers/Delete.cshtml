@@ -65,7 +65,7 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.speaker.Topic)
         </dd>
-        @if (Model.meeting.IntermediateHymn != null || Model.meeting.IntermediateHymn == "")
+        @if (Model.meeting.IntermediateHymn != null && Model.meeting.IntermediateHymn != "")
         {
             <dt class="col-sm-2">
                 @Html.DisplayNameFor(model => model.meeting.IntermediateHymn)
